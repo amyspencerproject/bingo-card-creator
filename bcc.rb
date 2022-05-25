@@ -56,6 +56,31 @@ Prawn::Document.generate("bingo_grid.pdf") do
             text char, align: :center, valign: :center, size: 50, style: :bold
         end
     end
+
+    b_col.each_with_index do |num, i|
+        grid((i+1), 0).bounding_box do
+            stroke_bounds
+            text num.to_s, align: :center, valign: :center, size: 50, style: :bold
+        end
+    end
+    i_col.each_with_index do |num, i|
+        grid((i+1), 1).bounding_box do
+            stroke_bounds
+            text num.to_s, align: :center, valign: :center, size: 50, style: :bold
+        end
+    end
+    g_col.each_with_index do |num, i|
+        grid((i+1), 3).bounding_box do
+            stroke_bounds
+            text num.to_s, align: :center, valign: :center, size: 50, style: :bold
+        end
+    end
+    o_col.each_with_index do |num, i|
+        grid((i+1), 4).bounding_box do
+            stroke_bounds
+            text num.to_s, align: :center, valign: :center, size: 50, style: :bold
+        end
+    end
 end
 
 
