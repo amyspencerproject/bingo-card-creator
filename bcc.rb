@@ -1,3 +1,6 @@
+require "prawn"
+
+
 b_col = (1..15).to_a.sample(5)
 i_col = (16..30).to_a.sample(5)
 n_col = (31..45).to_a.sample(4)
@@ -37,3 +40,8 @@ BINGO
 # puts b_col[0]
 # puts b_col[1].class
 puts bingo_card
+
+
+Prawn::Document.generate("bingo.pdf") do
+    text bingo_card
+  end
